@@ -14,9 +14,13 @@ public class FileSearch {
         boolean res=f.exists();
         if(res){
             System.out.println(fname+" Available");
-            long val=f.length();
-            System.out.println("Its Size : "+val+" bytes");
-            
+            boolean res1=f.isFile();
+            if(res1==true){
+                long val=f.length();
+                System.out.println("Its Size : "+val+" bytes");
+            }else{
+                System.out.println(fname + " is a folder ");
+            }
         }else{
             System.out.println(fname + " Not Available");
         }
